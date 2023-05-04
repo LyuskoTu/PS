@@ -1,0 +1,44 @@
+﻿<Window x:Class="StudentInfoSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentInfoSystem"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="0,0,0,-76">
+        <GroupBox Header="Personal info" Margin="10,14,10,299" Padding="10">
+            <StackPanel>
+                <TextBox TextChanged="TextBox_TextChanged_name" Name="name">Name: </TextBox>
+                <TextBox TextChanged="TextBox_TextChanged_midleName" Name="midleName">Middle Name: </TextBox>
+                <TextBox TextChanged="TextBox_TextChanged_lastName" Name="lastName">Last Name: </TextBox>
+                
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Student info" Margin="10,156,10,163" Padding="10">
+            <StackPanel>
+                <TextBox TextChanged="TextBox_TextChanged_grade" Name="grade">Grade:"</TextBox>
+                <TextBox TextChanged="TextBox_TextChanged_faculty" Name="faculty">Faculty:</TextBox>
+                <TextBox TextChanged="TextBox_TextChanged_speciality" Name="speciality">Speciality:</TextBox>
+                <TextBox TextChanged="TextBox_TextChanged_oks" Name="oks">OKS:"</TextBox>
+                <TextBox TextChanged="TextBox_TextChanged_status" Name="status">Status:"</TextBox>
+                <TextBox TextChanged="TextBox_TextChanged_facultyNumber" Name="facultyNumber">Faculty Number:"</TextBox>
+                <TextBox TextChanged="TextBox_TextChanged_course" Name="course">Course:"</TextBox>
+                <TextBox TextChanged="TextBox_TextChanged_stream" Name="stream">Stream:"</TextBox>
+               
+                <TextBox TextChanged="TextBox_TextChanged_group" Name="group">Group:"</TextBox>
+                
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="disable" Margin="636,352,26,84" Click="Button_Click">Disable All</Button>
+        <Button x:Name="enable" Margin="446,352,213,84" Click="Button_Click_1">Enable All</Button>
+        <Button x:Name="clear" Margin="280,352,379,84" Click="Button_Click_2">Clear All</Button>
+        <Button  Margin="26,352,642,84" Click="Button_Log_Out">Log Out</Button>
+        <GroupBox x:Name="gr_box3">
+            
+            <StackPanel>
+                <Button Height="429" Click="Button_Log_In">Log In</Button>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

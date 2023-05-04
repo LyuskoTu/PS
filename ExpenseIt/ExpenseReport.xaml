@@ -1,0 +1,48 @@
+﻿<Window x:Class="ExpenseIt.ExpenseReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpenseIt"
+        mc:Ignorable="d"
+        Title="ExpenseIt - View Expense" Height="450" Width="800">
+    <!--Най Външна-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Foreground="Black">EXPENSE REPORT FOR:</Label>
+        <Label Grid.Row="1" Content="{Binding Path=Name}" ></Label>
+        <!--2ра таблица-->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label VerticalAlignment="Center" Grid.Row="3" Foreground="Black">Department:</Label>
+            <!--3та таблица-->
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Path=Expense}"
+                    AutoGenerateColumns="False" RowHeaderWidth="0" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ExpenseType"
+                        Binding="{Binding Path=ExpenseType}" />
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Path=ExpenseAmount}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
